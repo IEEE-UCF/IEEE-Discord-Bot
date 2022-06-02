@@ -11,6 +11,5 @@ class Ping(commands.Cog):
         await ctx.channel.send('pong')
 
 
-
 def setup(bot):
     bot.add_cog(Ping(bot))

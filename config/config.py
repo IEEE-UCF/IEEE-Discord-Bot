@@ -12,8 +12,13 @@ reaction_roles = {
 """
 
 reaction_roles = {
-    '🔥':'Test Role'
+    '⚡':'EE Comp',
+    '☀️':'EE Power',
+    '📻':'EE RF',
+    '🔊':'EE Signals & Comms',
+    '💻':'CpE Comp',
+    '🕹️':'CpE VLSI'
 }
 
 #channel ID of where the emebed will be sent that can be reacted on to add roles
-channelID = 974865668262477865
+channelID = 980143575083929601
