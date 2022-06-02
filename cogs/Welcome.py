@@ -9,7 +9,7 @@ class Welcome(commands.Cog):
     @commands.command()
     async def on_message_join(self, memeber):
         channel = self.get_channel()
-        embed=discord.Embed(color=0xFFEA00)
+        embed=discord.Embed(color=0xF1C414)
         embed.title = 'Welcome {memeber.name}'
         embed.description = 'Thank you for joining {memeber.guild.name}'
         embed.set_thumbnail(url = memeber.avatar_url)
