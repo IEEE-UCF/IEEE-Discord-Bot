@@ -2,7 +2,7 @@ from discord.ext import commands
 import os
 from dotenv import load_dotenv
 
-client = commands.Bot(command_prefix='?', help_command=None)
+client = commands.Bot(command_prefix='-', help_command=None)
 
 #print to console that Bot is logged in
 @client.event

@@ -35,7 +35,7 @@ class ReactionRoles(commands.Cog):
         if member.id != self.bot.user.id:
             if reaction.message.channel.id == int(channelID) and reaction.emoji in reaction_roles.keys():
                 role = discord.utils.get(member.guild.roles, name=reaction_roles[reaction.emoji])
-                print('{} choose the role {}'.format(member.display_name), reaction_roles[reaction.emoji])
+                print('{} choose the role {}'.format(member.name), reaction_roles[reaction.emoji])
                 await member.add_roles(role)
 
             
