@@ -6,9 +6,9 @@ class Welcome(commands.Cog):
         self.bot = bot
     
     #when new member joins guild, then a welcome message is sent 
-    @commands.command()
+    @commands.Cog.listener()
     async def on_message_join(self, memeber):
-        channel = self.get_channel()
+        channel = self.get_channel(980143575083929601)
         embed=discord.Embed(color=0xF1C414)
         embed.title = 'Welcome {memeber.name}'
         embed.description = 'Thank you for joining {memeber.guild.name}'

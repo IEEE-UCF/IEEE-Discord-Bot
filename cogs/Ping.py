@@ -9,6 +9,17 @@ class Ping(commands.Cog):
     async def ping_command(self, ctx):
         print('Ping Command called')
         await ctx.channel.send('pong')
+    
+    @commands.command(name='bing')
+    async def bing_command(self, ctx):
+        print('Bing Command called')
+        await ctx.channel.send('bong')
+
+    @commands.command(name='ding')
+    async def ding_command(self, ctx):
+        print('Ding Command called')
+        await ctx.channel.send('dong')
+        
 
 
 def setup(bot):
