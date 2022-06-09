@@ -32,6 +32,11 @@ class Ping(commands.Cog):
         else:
             await ctx.channel.send('{}\'s mom'.format(mention))
         print('Ur Command called')
+    
+    @commands.command(name='Feelin')
+    async def feelin_command(self, ctx):
+        print('Feelin Command called')
+        await ctx.channel.send('Epic')
         
     @commands.command(name='Feelin')
     async def ding_command(self, ctx):
