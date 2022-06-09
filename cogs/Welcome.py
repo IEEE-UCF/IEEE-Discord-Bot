@@ -1,5 +1,6 @@
 from discord.ext import commands
 import discord
+from config.config import channelIDWelcome, hexColor
 
 class Welcome(commands.Cog):
     def __init__(self, bot):
@@ -7,12 +8,12 @@ class Welcome(commands.Cog):
     
     #when new member joins guild, then a welcome message is sent 
     @commands.Cog.listener()
-    async def on_message_join(self, memeber):
-        channel = self.get_channel(980143575083929601)
-        embed=discord.Embed(color=0xF1C414)
-        embed.title = 'Welcome {memeber.name}'
-        embed.description = 'Thank you for joining {memeber.guild.name}'
-        embed.set_thumbnail(url = memeber.avatar_url)
+    async def on_member_join(self, member):
+        channel = self.bot.get_channel(int(channelIDWelcome))
+        embed=discord.Embed(color=hexColor)
+        embed.title = 'Welcome {}'.format(member.name)
+        embed.description = 'Thank you for joining {}'.format(member.guild.name)
+        embed.set_thumbnail(url = member.avatar_url)
         await channel.send(embed=embed)
 
 

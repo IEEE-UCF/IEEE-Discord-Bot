@@ -21,10 +21,19 @@ reaction_roles = {
 }
 
 #channel ID of where the emebed will be sent that can be reacted on to add roles
-channelID = 980143575083929601
+channelIdReact = 980143575083929601
 
 #channel ID of where the message will be sent that can be reacted on to add member role
 channelIDMember = 981941557655658537
+
+#channel ID of member count voice channel
+channelIDCount = 984203513657700442
+
+#channel ID of welcome message
+channelIDWelcome = 981706501032914984
+
+#discord embed color
+hexColor = 0xF1C414
 
 #same template of emoji to role as above but for member role
 discord_member_role = {
@@ -41,5 +50,6 @@ admin_roles = [
     'President', 
     'Vice President',
     'Officer',
-    'Discord Bot ree'
+    'Discord Bot ree',
+    'Adminastratror'
 ]

@@ -3,7 +3,7 @@ from os import remove
 from discord.ext import commands
 from discord.utils import get
 import discord
-from config.config import channelID, reaction_roles, admin_roles, channelIDMember, discord_member_msg, discord_member_role
+from config.config import channelIdReact, reaction_roles, admin_roles, channelIDMember, discord_member_msg, discord_member_role
 
 class ReactionRoles(commands.Cog):
     def __init__(self, bot):
@@ -24,7 +24,7 @@ class ReactionRoles(commands.Cog):
 
                 if type == 'roles': #checks if first argument (type) is roles
                     if self.reactRoleMsg == 0: #checks if this command has already been run so as to not have duplicate messages sent
-                        channel = self.bot.get_channel(int(channelID))
+                        channel = self.bot.get_channel(int(channelIdReact))
                         embed=discord.Embed(color=0xF1C414)
                         embed.title='React for Role Assigment'
 
