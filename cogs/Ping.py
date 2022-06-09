@@ -19,16 +19,25 @@ class Ping(commands.Cog):
     async def ding_command(self, ctx):
         print('Ding Command called')
         await ctx.channel.send('dong')
+
+    @commands.command(name='ching')
+    async def ching_command(self, ctx):
+        print('Ching Command called')
+        await ctx.channel.send('chong')
     
     @commands.command(name='ur')
-    async def ding_command(self, ctx):
-        print('Ding Command called')
-        await ctx.channel.send('mom')
+    async def ur_command(self, ctx, mention):
+        if mention == None:
+            await ctx.channel.send('mom')
+        else:
+            await ctx.channel.send('{}\'s mom'.format(mention))
+        print('Ur Command called')
         
     @commands.command(name='Feelin')
     async def ding_command(self, ctx):
         print('Ding Command called')
         await ctx.channel.send('Epic')
+
         
 
 
