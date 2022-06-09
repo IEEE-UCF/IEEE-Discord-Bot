@@ -22,7 +22,7 @@ class Ping(commands.Cog):
 
     @commands.command(name='ching')
     async def ching_command(self, ctx):
-        print('Ding Command called')
+        print('Ching Command called')
         await ctx.channel.send('chong')
     
     @commands.command(name='ur')
@@ -32,6 +32,11 @@ class Ping(commands.Cog):
         else:
             await ctx.channel.send('{}\'s mom'.format(mention))
         print('Ur Command called')
+    
+    @commands.command(name='Feelin')
+    async def feelin_command(self, ctx):
+        print('Feelin Command called')
+        await ctx.channel.send('Epic')
         
         
 
