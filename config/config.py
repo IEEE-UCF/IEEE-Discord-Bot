@@ -16,6 +16,7 @@ reaction_roles = {
     '☀️':'EE Power',
     '📻':'EE RF',
     '🔊':'EE Signals',
+    '💡':'EE Photonics',
     '💻':'CpE Comp',
     '🕹️':'CpE VLSI'
 }
