@@ -22,10 +22,10 @@ reaction_roles = {
 }
 
 #channel ID of where the emebed will be sent that can be reacted on to add roles
-channelIdReact = 980143575083929601
+channelIdReact = 985211162230665306
 
 #channel ID of where the message will be sent that can be reacted on to add member role
-channelIDMember = 981941557655658537
+channelIDMember = 985211162230665306
 
 #channel ID of member count voice channel
 channelIDCount = 984203513657700442

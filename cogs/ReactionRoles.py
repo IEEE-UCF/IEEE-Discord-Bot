@@ -49,7 +49,11 @@ class ReactionRoles(commands.Cog):
                 elif type =='member': #checks if first argument (type) is member
                     if self.reactMemberMsg == 0: #checks if this command has already been run so as to not have duplicate messages sent
                         channel = self.bot.get_channel(int(channelIDMember))
-                        msg = await channel.send(discord_member_msg['msg']) #sends message
+                        embed = discord.Embed(color=0xF1C414)
+                        embed.title = 'Server Access'
+                        embed.description = discord_member_msg['msg']
+
+                        msg = await channel.send(embed=embed) #sends message
 
                         keys = discord_member_role.keys()
                         for i in keys:
