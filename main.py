@@ -14,7 +14,7 @@ async def on_ready():
   print('We have logged in as {0.user}'.format(client))
 
 #name of .py file of a cog in cogs file goes into cogs then if the .py name is main then load all cogs
-cogs = ['Ping', 'Welcome', 'ReactionRoles','MemberCounter']
+cogs = ['Ping', 'Welcome', 'ReactionRoles','MemberCounter','SeniorDesignMatching']
 
 if __name__ == '__main__':
     for cog in cogs:

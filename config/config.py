@@ -33,6 +33,9 @@ channelIDCount = 984203513657700442
 #channel ID of welcome message
 channelIDWelcome = 981706501032914984
 
+#channel ID of SD Matching
+channelIDSD = 987017084812787742
+
 #discord embed color
 hexColor = 0xF1C414
 
@@ -54,3 +57,4 @@ admin_roles = [
     'Discord Bot ree',
     'Adminastratror'
 ]
+
