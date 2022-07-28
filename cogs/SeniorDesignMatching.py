@@ -1,14 +1,13 @@
 from unicodedata import category
 from discord.ext import commands
 import discord
-from config.config import channelIDSD
+from config.config import channelIDSD, admin_roles
 SDcategory = channelIDSD
 
 class SeniorDesignMatching(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
     
-    #when messge with correct prefix (-ping) bot sends message pong
     @commands.command(name='sdm')
     async def sdm_command(self, ctx, semesters, year):
 
@@ -24,13 +23,16 @@ class SeniorDesignMatching(commands.Cog):
         #If the user enters a valid semester and year 
         if semesters in cases and year in yearsList:
             semesYear = semesters + ' ' + year
+            semesYearH = semesters + '-' + str(year)
             
             #If the current role exists, give the user the current role
             if discord.utils.get(ctx.guild.roles, name=semesYear) != None:
                 role = discord.utils.get(ctx.guild.roles, name=semesYear)
                 await ctx.author.add_roles(role)
-                channel = discord.utils.get(ctx.guild.text_channel, name=semesYear)
-                await channel.send('Welcome @{} your Senior Design Matching Channel'.format(ctx.author.display_name))
+
+                for channels in ctx.guild.channels:
+                    if str(channels) == str(semesYearH):
+                        channel = channels
 
             #If the current doesn't exist, create a new channel, give user the role, and adjust permissions of channel 
             #so only user will role can see the channel    
@@ -54,11 +56,37 @@ class SeniorDesignMatching(commands.Cog):
                 channel = await ctx.guild.create_text_channel('{}'.format(semesYear),category=category, overwrites=overwrites)
                 
                 await ctx.author.add_roles(sdmRole)
-                await channel.send('Welcome @{} your Senior Design Matching Channel'.format(ctx.author.display_name))
+                
+            await channel.send('Welcome {} your Senior Design Matching Channel'.format(ctx.author.mention))
         
         else:
             await ctx.channel.send('Your arguments were not correct. \nFormart for Fall 2024-Spring 2025 must be: -sdm fasp 2024')
 
-        
+
+
+
+    @commands.command(name='sdmDelete')
+    async def sdmDelete_command(self, ctx, semesters, year):
+
+        user_role = str(ctx.author.top_role)
+        if user_role in admin_roles:
+
+            semesters = str(semesters.lower())
+            cases = ['fasp', 'spfa', 'spsu', 'sufa']
+            if semesters in cases:
+
+                semesYearH = semesters + '-' + str(year)
+                semesYear = semesters + ' ' + str(year)
+                guild = ctx.guild 
+                for channel in guild.channels:
+                    if str(channel) == str(semesYearH):
+                        await channel.delete()
+                        print('{} Channel deleted'.format(semesYear))
+                if discord.utils.get(ctx.guild.roles, name=semesYear) != None:
+                    role = discord.utils.get(ctx.guild.roles, name=semesYear)
+                    await role.delete()
+                    print('{} Role deleted'.format(semesYear))
+
+
 def setup(bot):
     bot.add_cog(SeniorDesignMatching(bot))
