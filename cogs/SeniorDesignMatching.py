@@ -8,6 +8,7 @@ class SeniorDesignMatching(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
     
+
     @commands.command(name='sdm')
     async def sdm_command(self, ctx, semesters, year):
 
@@ -61,7 +62,6 @@ class SeniorDesignMatching(commands.Cog):
         
         else:
             await ctx.channel.send('Your arguments were not correct. \nFormart for Fall 2024-Spring 2025 must be: -sdm fasp 2024')
-
 
 
 
