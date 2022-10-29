@@ -3,7 +3,6 @@ UCF IEEE Discord Bot being created and documented here
 (WIP)
 
 Depndendencies:
-    pip istall disord.py
-    pip install python-dotenv
+- pip install discord.py python-dotenv
 
-python 3.10.4
+Utilizes python 3.10.4
